@@ -1,0 +1,661 @@
+/* Character Creator Styles */
+
+.charcreator {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.charcreator__step {
+	min-height: 0;
+	overflow-y: auto;
+}
+
+/* Species/Class/Background Card Grids */
+.charcreator__species-grid,
+.charcreator__class-grid,
+.charcreator__background-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 0.5rem;
+	max-height: 300px;
+	overflow-y: auto;
+	padding: 0.25rem;
+}
+
+.charcreator__species-card,
+.charcreator__class-card,
+.charcreator__background-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75rem 0.5rem;
+	min-height: 60px;
+	text-align: center;
+	transition: all 0.15s ease;
+}
+
+.charcreator__species-card:hover,
+.charcreator__class-card:hover,
+.charcreator__background-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.charcreator__species-card-name,
+.charcreator__class-card-name,
+.charcreator__background-card-name {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.charcreator__class-card-info,
+.charcreator__background-card-feat {
+	font-size: 0.75rem;
+}
+
+/* Preview Panel */
+.charcreator__preview {
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.charcreator__preview-entries {
+	font-size: 0.9rem;
+}
+
+/* Stats Generation */
+.charcreator__stats-methods {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.charcreator__stats-method-btn {
+	flex: 1;
+	min-width: 180px;
+	padding: 0.75rem;
+	text-align: left;
+}
+
+.charcreator__stats-method-name {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.charcreator__stats-method-desc {
+	font-size: 0.75rem;
+}
+
+.charcreator__stats-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 0;
+}
+
+.charcreator__stats-label {
+	width: 100px;
+	font-weight: 500;
+}
+
+.charcreator__stats-score {
+	width: 40px;
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.charcreator__stats-btn-dec,
+.charcreator__stats-btn-inc {
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.charcreator__stats-mod {
+	width: 40px;
+	text-align: center;
+	color: var(--rgb-name-blue);
+}
+
+.charcreator__stats-cost {
+	width: 60px;
+	text-align: right;
+}
+
+.charcreator__stats-select,
+.charcreator__stats-input {
+	width: 80px;
+}
+
+.charcreator__stats-points {
+	font-size: 1.5rem;
+	font-weight: 600;
+	min-width: 40px;
+	text-align: center;
+}
+
+.charcreator__stats-points--error {
+	color: var(--rgb-name-red);
+}
+
+/* Rolled stats display */
+.charcreator__stats-rolled-value {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+}
+
+.charcreator__stats-rolled-total {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+/* Stats Summary */
+.charcreator__stats-summary {
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+}
+
+.charcreator__stats-summary-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem;
+	min-width: 60px;
+	background: var(--rgb-bg);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+}
+
+.charcreator__stats-summary-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--rgb-name-blue);
+}
+
+.charcreator__stats-summary-score {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.charcreator__stats-summary-mod {
+	font-size: 0.9rem;
+	color: var(--rgb-name-blue);
+}
+
+/* Equipment */
+.charcreator__equipment-section {
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	padding: 1rem;
+}
+
+.charcreator__equipment-choices {
+	font-size: 0.9rem;
+}
+
+.charcreator__inventory-list {
+	max-height: 300px;
+	overflow-y: auto;
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	padding: 0.5rem;
+	background: var(--rgb-bg);
+}
+
+/* Inventory Item Categories */
+.charcreator__inv-category {
+	margin-bottom: 0.75rem;
+}
+
+.charcreator__inv-category:last-child {
+	margin-bottom: 0;
+}
+
+.charcreator__inv-category-header {
+	font-weight: 600;
+	font-size: 0.8rem;
+	color: var(--rgb-name-blue);
+	margin-bottom: 0.25rem;
+	padding-bottom: 0.25rem;
+	border-bottom: 1px solid var(--rgb-border-grey);
+}
+
+/* Inventory Items */
+.charcreator__inv-item {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem 0.5rem;
+	margin-bottom: 0.25rem;
+	background: var(--rgb-bg-1);
+	border-radius: 3px;
+	gap: 0.5rem;
+}
+
+.charcreator__inv-item:hover {
+	background: var(--rgb-bg-2);
+}
+
+.charcreator__inv-item-name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.charcreator__inv-item-name--equipped {
+	font-weight: 600;
+	color: var(--rgb-name-blue);
+}
+
+.charcreator__inv-item-details {
+	flex-shrink: 0;
+}
+
+.charcreator__inv-equip-cb {
+	flex-shrink: 0;
+	cursor: pointer;
+}
+
+.charcreator__inv-qty {
+	text-align: center;
+}
+
+.charcreator__inv-remove {
+	flex-shrink: 0;
+	line-height: 1;
+}
+
+/* Details */
+.charcreator__details-section {
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	padding: 1rem;
+}
+
+.charcreator__details-label {
+	width: 150px;
+	flex-shrink: 0;
+}
+
+.charcreator__details-label-sm {
+	width: 60px;
+	flex-shrink: 0;
+}
+
+/* Character Sheet */
+.charcreator__sheet {
+	background: var(--rgb-bg);
+}
+
+.charcreator__sheet-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+}
+
+@media (max-width: 992px) {
+	.charcreator__sheet-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.charcreator__sheet-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.charcreator__sheet-col {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.charcreator__sheet-section {
+	background: var(--rgb-bg-1);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	padding: 0.75rem;
+}
+
+.charcreator__sheet-section-title {
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.25rem;
+	border-bottom: 1px solid var(--rgb-border-grey);
+	color: var(--rgb-name-blue);
+}
+
+/* Sheet Header */
+.charcreator__sheet-header {
+	text-align: center;
+	padding: 1rem;
+}
+
+.charcreator__sheet-name {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 0.25rem;
+}
+
+.charcreator__sheet-info {
+	font-size: 1rem;
+	color: var(--rgb-name-blue);
+}
+
+.charcreator__sheet-info-secondary {
+	font-size: 0.85rem;
+	color: var(--rgb-off-black);
+}
+
+/* Abilities */
+.charcreator__sheet-abilities {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+}
+
+.charcreator__sheet-ability {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem;
+	background: var(--rgb-bg);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+}
+
+.charcreator__sheet-ability-name {
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--rgb-name-blue);
+}
+
+.charcreator__sheet-ability-score {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.charcreator__sheet-ability-mod {
+	font-size: 0.9rem;
+	padding: 0.25rem 0.5rem;
+	min-width: 40px;
+}
+
+/* Saving Throws */
+.charcreator__sheet-saves {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.charcreator__sheet-save {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.125rem 0;
+}
+
+.charcreator__sheet-save--proficient {
+	font-weight: 500;
+}
+
+.charcreator__sheet-save-prof {
+	font-size: 0.75rem;
+	width: 12px;
+}
+
+.charcreator__sheet-save-roll {
+	min-width: 36px;
+}
+
+.charcreator__sheet-save-name {
+	font-size: 0.85rem;
+}
+
+/* Skills */
+.charcreator__sheet-skills {
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.charcreator__sheet-skill {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.125rem 0;
+}
+
+.charcreator__sheet-skill--proficient {
+	font-weight: 500;
+}
+
+.charcreator__sheet-skill-prof {
+	font-size: 0.75rem;
+	width: 12px;
+}
+
+.charcreator__sheet-skill-roll {
+	min-width: 32px;
+}
+
+.charcreator__sheet-skill-name {
+	font-size: 0.8rem;
+	flex-grow: 1;
+}
+
+.charcreator__sheet-skill-ability {
+	font-size: 0.7rem;
+}
+
+/* Combat Stats */
+.charcreator__sheet-combat-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5rem;
+}
+
+.charcreator__sheet-combat-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem;
+	background: var(--rgb-bg);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+}
+
+.charcreator__sheet-combat-value {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.charcreator__sheet-combat-value--btn {
+	padding: 0.25rem 0.75rem;
+	font-size: 1.1rem;
+}
+
+.charcreator__sheet-combat-label {
+	font-size: 0.7rem;
+	color: var(--rgb-off-black);
+	text-transform: uppercase;
+}
+
+/* HP Box */
+.charcreator__sheet-hp {
+	background: var(--rgb-bg);
+	border: 1px solid var(--rgb-border-grey);
+	border-radius: 4px;
+	padding: 0.5rem;
+}
+
+.charcreator__sheet-hp-label {
+	font-size: 0.7rem;
+	color: var(--rgb-off-black);
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 0.25rem;
+}
+
+.charcreator__sheet-hp-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.charcreator__sheet-hp-input {
+	width: 50px;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.charcreator__sheet-hp-input-sm {
+	width: 40px;
+	text-align: center;
+	font-size: 0.9rem;
+}
+
+/* Attacks */
+.charcreator__sheet-attack-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 0;
+	flex-wrap: wrap;
+}
+
+.charcreator__sheet-attack-name {
+	font-weight: 500;
+	min-width: 100px;
+}
+
+.charcreator__sheet-attack-name--clickable {
+	cursor: pointer;
+	color: var(--rgb-name-blue);
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}
+
+.charcreator__sheet-attack-name--clickable:hover {
+	color: var(--rgb-name-red);
+	text-decoration-style: solid;
+}
+
+/* Features */
+.charcreator__sheet-feature-group {
+	margin-bottom: 0.5rem;
+}
+
+.charcreator__sheet-feature-source {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--rgb-name-blue);
+	margin-bottom: 0.25rem;
+}
+
+.charcreator__sheet-feature-name {
+	font-size: 0.85rem;
+	padding-left: 0.5rem;
+}
+
+/* Personality */
+.charcreator__sheet-personality-item {
+	margin-bottom: 0.5rem;
+}
+
+.charcreator__sheet-personality-label {
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--rgb-off-black);
+	text-transform: uppercase;
+}
+
+.charcreator__sheet-personality-value {
+	font-size: 0.85rem;
+}
+
+/* Equipment on Sheet */
+.charcreator__sheet-gold-input {
+	width: 60px;
+	display: inline-block;
+}
+
+.charcreator__sheet-inventory-list {
+	font-size: 0.85rem;
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.charcreator__sheet-inventory-list li {
+	padding: 0.125rem 0;
+}
+
+/* Spells */
+.charcreator__sheet-spell-stats {
+	display: flex;
+	justify-content: space-around;
+	gap: 0.5rem;
+}
+
+.charcreator__sheet-spell-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.charcreator__sheet-spell-stat-label {
+	font-size: 0.65rem;
+	color: var(--rgb-off-black);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.charcreator__sheet-spell-stat-value {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+/* Print Styles */
+@media print {
+	.charcreator__sheet {
+		padding: 0;
+	}
+
+	.charcreator__sheet-section {
+		break-inside: avoid;
+	}
+
+	.ve-btn {
+		border: 1px solid #333 !important;
+		background: #fff !important;
+		color: #333 !important;
+	}
+
+	#btn-print-sheet,
+	#btn-export-sheet,
+	#btn-sheet-edit {
+		display: none !important;
+	}
+}
